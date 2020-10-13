@@ -1,11 +1,13 @@
 .mainNav__scroll {
   transition: 0.5s;
 }
-
 .mainNav {
   transition: 0.5s;
 }
 .mainNav__btn:hover {
   background-color: transparent;
   color: #000;
+}
+.mainNav__btn {
+  background-color: #000;
 }
