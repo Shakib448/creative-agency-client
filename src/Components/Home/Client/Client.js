@@ -11,27 +11,21 @@ const Client = () => {
   return (
     <section className="client">
       <Container>
-        <Row className="justify-content-center">
-          <Col md={2}>
-            <img className="mw-100" src={slack} alt="slack" fluid />
+        <Row className="justify-content-center align-items-center">
+          <Col md={2} className="text-center mb-3">
+            <img width="100px" src={slack} alt="slack" fluid />
           </Col>
-          <Col md={2}>
-            <img className="mw-100" src={google} alt="google" fluid />
+          <Col md={2} className="text-center mb-3">
+            <img width="100px" src={google} alt="google" fluid />
           </Col>
-          <Col md={2} className="text-center">
+          <Col md={2} className="text-center mb-3">
             <img width="100px" src={uber} alt="uber" fluid />
           </Col>
-          <Col md={2}>
-            <img
-              width="100px"
-              className="mw-100"
-              src={netflix}
-              alt="netflix"
-              fluid
-            />
+          <Col md={2} className="text-center mb-3">
+            <img width="100px" src={netflix} alt="netflix" fluid />
           </Col>
-          <Col md={2}>
-            <img className="mw-100" src={airbnb} alt="airbnb" fluid />
+          <Col md={2} className="text-center mb-3">
+            <img width="100px" src={airbnb} alt="airbnb" fluid />
           </Col>
         </Row>
       </Container>

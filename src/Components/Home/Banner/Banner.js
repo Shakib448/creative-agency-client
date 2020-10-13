@@ -14,10 +14,10 @@ import "./Banner.css";
 
 const Banner = () => {
   return (
-    <main style={{ height: "600px" }} className=" d-flex align-items-center">
+    <main className=" d-flex align-items-center">
       <Container>
         <Row>
-          <Col md={{ span: 4, offset: 1 }}>
+          <Col md={{ span: 4, offset: 1 }} className="mt-5 mb-5">
             <h1>
               Let's Grow Your Brand To The <br /> Next Level
             </h1>

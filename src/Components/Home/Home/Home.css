@@ -1,4 +1,5 @@
 .home {
   background-image: linear-gradient(176deg, #fbd062 70%, #fff calc(70% + 2px));
-  height: 700px;
+  height: 730px;
+  padding: 10% 0;
 }
