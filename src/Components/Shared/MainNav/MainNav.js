@@ -50,29 +50,51 @@ const MainNav = () => {
                 src={logo}
                 width="150"
                 height="50"
-                className="d-inline-block align-top"
+                className="d-inline-block align-top mt-2"
                 alt="volunteer network logo"
               />
             </Navbar.Brand>
           </NavLink>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ml-auto font-weight-bold text-white">
+            <Nav className="ml-auto font-weight-bold text-white ">
               <NavLink
-                className="mr-3 mt-2 text-dark"
+                className="mr-3 mb-3 mt-2 text-dark mainNav__hover"
+                activeClassName="mainNav__activeHover"
                 style={{ textDecoration: "none" }}
                 to="/"
               >
                 Home
               </NavLink>
 
-              <Nav.Link className="mr-3 text-dark">Donation</Nav.Link>
-              <Nav.Link className="mr-3 text-dark">Events</Nav.Link>
-              <Nav.Link className="mr-3 text-dark">Blog</Nav.Link>
+              <NavLink
+                to="/"
+                // activeClassName="mainNav__activeHover"
+                className="mr-3 mb-3 mt-2 text-dark mainNav__hover"
+                style={{ textDecoration: "none" }}
+              >
+                Donation
+              </NavLink>
+              <NavLink
+                to="/"
+                // activeClassName="mainNav__activeHover"
+                className="mr-3 mb-3 mt-2 text-dark mainNav__hover"
+                style={{ textDecoration: "none" }}
+              >
+                Events
+              </NavLink>
+              <NavLink
+                to="/"
+                // activeClassName="mainNav__activeHover"
+                className="mr-3 mb-3 mt-2 text-dark mainNav__hover"
+                style={{ textDecoration: "none" }}
+              >
+                Blog
+              </NavLink>
               {userData.email ? (
                 <>
                   {" "}
-                  <Nav.Link className="mr-3 text-dark">
+                  <Nav.Link className="mr-3 text-dark li">
                     {userData.name}
                   </Nav.Link>{" "}
                   <Button
