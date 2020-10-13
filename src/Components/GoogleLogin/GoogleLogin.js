@@ -30,7 +30,6 @@ const GoogleLogin = () => {
         name: displayName,
         img: photoURL,
       };
-      console.log(singedInUser);
       setUserData(singedInUser);
       //   history.replace(from);
     } catch (err) {
