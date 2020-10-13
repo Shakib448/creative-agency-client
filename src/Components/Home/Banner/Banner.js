@@ -26,7 +26,6 @@ const Banner = () => {
               nesciunt similique ad atque cum, in voluptatum et ipsam quod
               libero?
             </p>
-
             <Button className="btn btn-dark pl-5 pr-5 pt-2 pb-2 banner__btn">
               Hire us
             </Button>
