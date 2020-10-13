@@ -40,7 +40,7 @@ const CarouselDetails = () => {
     <section className="carouselDetails">
       <Container>
         <Row className="justify-content-center">
-          <h1 className="text-white">
+          <h1 className="text-white text-center">
             Here are some of{" "}
             <span className="carouselDetails__header">our works</span>{" "}
           </h1>

@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../Shared/Footer/Footer";
 import MainNav from "../../Shared/MainNav/MainNav";
 import Banner from "../Banner/Banner";
 import CarouselDetails from "../CarouselDetails/CarouselDetails";
@@ -16,6 +17,7 @@ const Home = () => {
       <Service />
       <CarouselDetails />
       <ClientFeedBack />
+      <Footer />
     </div>
   );
 };
