@@ -10,7 +10,7 @@ const Dashboard = () => {
           {" "}
           <CloudUploadIcon />{" "}
         </span>
-        <span>Upload project file</span>
+        <span style={{ fontSize: "14px" }}>Upload project file</span>
       </label>
     </div>
   );
