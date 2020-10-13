@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap");
 .service {
-  padding: 5%;
+  padding: 5% 10%;
   font-family: "Abril Fatface", cursive;
   letter-spacing: 2px;
   text-align: center;
@@ -13,9 +13,6 @@
 
 .service__img {
   width: 100px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   padding: 10px 0;
 }
 

@@ -4,8 +4,8 @@ import { Card, Col } from "react-bootstrap";
 const Services = ({ service: { title, img, description } }) => {
   return (
     <>
-      <Col className="text-center" md={4}>
-        <Card className="service__card" style={{ width: "18rem" }}>
+      <Col md={4}>
+        <Card className="d-flex align-items-center service__card">
           <div className="service__img">
             <Card.Img variant="top" src={img} />
           </div>
