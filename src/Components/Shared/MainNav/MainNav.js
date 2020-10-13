@@ -25,7 +25,6 @@ const MainNav = () => {
           } else handleShow(false);
         });
         return () => {
-          // This null functionality added for if the scroll is okh then scroll or otherwise the scroll will null
           window.addEventListener("scroll", null);
         };
       } catch (error) {
@@ -85,12 +84,7 @@ const MainNav = () => {
           ) : (
             <>
               <NavLink to="/google-sign-in">
-                <Button className=" mr-3">Register</Button>
-              </NavLink>
-              <NavLink to="/">
-                <Button variant="secondary" className=" mr-3" type="submit">
-                  Admin
-                </Button>
+                <Button className=" mr-3">Log In</Button>
               </NavLink>
             </>
           )}
