@@ -11,7 +11,7 @@ const Services = ({ service: { title, img, description } }) => {
           </div>
           <Card.Body>
             <Card.Title>{title}</Card.Title>
-            <Card.Text>{description}</Card.Text>
+            <Card.Text className="text-secondary">{description}</Card.Text>
           </Card.Body>
         </Card>
       </Col>

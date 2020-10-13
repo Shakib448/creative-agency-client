@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap");
 .service {
   padding: 5%;
   font-family: "Abril Fatface", cursive;
@@ -21,6 +22,7 @@
   border: none;
   cursor: pointer;
   transition: 0.5s;
+  font-family: "Libre Baskerville", serif;
 }
 
 .service__card:hover {
