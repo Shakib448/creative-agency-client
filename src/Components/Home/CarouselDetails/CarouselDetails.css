@@ -1,0 +1,24 @@
+.carouselDetails {
+  background-color: #111430;
+  padding: 10%;
+}
+
+.carouselDetails__header {
+  color: #7ab259;
+}
+
+.carouselDetails__img {
+  width: 350px;
+  padding: 10px;
+}
+
+.carouselDetails__imgExt {
+  width: 350px;
+  padding: 10px;
+  height: 256px;
+}
+
+.alice-carousel__dots-item:hover,
+.alice-carousel__dots-item.__active {
+  background-color: #ffc107 !important;
+}
