@@ -77,7 +77,7 @@ const MainNav = () => {
                   </Nav.Link>{" "}
                   <Button
                     variant="outline-info"
-                    className="mr-3"
+                    className="btn-info"
                     onClick={() => {
                       handleBackHome();
                       setUserData({});
@@ -89,7 +89,9 @@ const MainNav = () => {
               ) : (
                 <>
                   <NavLink to="/google-sign-in">
-                    <Button className=" mr-3">Log In</Button>
+                    <Button className="btn btn-dark pl-5 pr-5 pt-2 pb-2 mainNav__btn">
+                      Log In
+                    </Button>
                   </NavLink>
                 </>
               )}

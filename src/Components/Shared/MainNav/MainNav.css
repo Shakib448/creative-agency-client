@@ -5,3 +5,7 @@
 .mainNav {
   transition: 0.5s;
 }
+.mainNav__btn:hover {
+  background-color: transparent;
+  color: #000;
+}

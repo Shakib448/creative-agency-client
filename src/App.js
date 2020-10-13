@@ -9,7 +9,7 @@ export const userInformationData = createContext();
 function App() {
   const [userData, setUserData] = useState({});
   return (
-    <div className="App">
+    <div className="app">
       <userInformationData.Provider value={[userData, setUserData]}>
         <Router>
           <Switch>
