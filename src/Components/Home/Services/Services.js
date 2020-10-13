@@ -4,9 +4,11 @@ import { Card, Col } from "react-bootstrap";
 const Services = ({ service: { title, img, description } }) => {
   return (
     <>
-      <Col md={4}>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={img} />
+      <Col className="text-center" md={4}>
+        <Card className="service__card" style={{ width: "18rem" }}>
+          <div className="service__img">
+            <Card.Img variant="top" src={img} />
+          </div>
           <Card.Body>
             <Card.Title>{title}</Card.Title>
             <Card.Text>{description}</Card.Text>

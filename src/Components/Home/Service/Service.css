@@ -8,3 +8,21 @@
 .service__header {
   color: #9cc684;
 }
+
+.service__img {
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0;
+}
+
+.service__card {
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.service__card:hover {
+  box-shadow: 10px 10px 50px lightgray;
+}

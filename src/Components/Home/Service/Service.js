@@ -37,7 +37,7 @@ const Service = () => {
             Provide awesome <span className="service__header">services</span>{" "}
           </h1>
         </Row>
-        <Row className="justify-content-center mt-4">
+        <Row className="justify-content-center align-items-center mt-4">
           {services.map((service, id) => (
             <Services service={service} key={id} />
           ))}
