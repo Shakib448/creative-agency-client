@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+.service {
+  padding: 5%;
+  font-family: "Abril Fatface", cursive;
+  letter-spacing: 2px;
+}
+
+.service__header {
+  color: #9cc684;
+}
