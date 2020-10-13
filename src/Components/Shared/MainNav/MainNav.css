@@ -4,6 +4,7 @@
 .mainNav {
   transition: 0.5s;
 }
+
 .mainNav__btn:hover {
   background-color: transparent;
   color: #000;
@@ -36,4 +37,10 @@
 .mainNav__activeHover:after {
   width: 100%;
   left: 0;
+}
+
+@media (max-width: 768px) {
+  .mainNav {
+    background-color: #f8f9fa;
+  }
 }

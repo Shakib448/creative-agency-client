@@ -98,6 +98,9 @@ const Footer = () => {
             </Form>
           </Col>
         </Row>
+        <Row className="justify-content-center mt-5 mb-5">
+          <h5>copyright Muktadir © 2020</h5>
+        </Row>
       </Container>
     </footer>
   );

@@ -3,3 +3,9 @@
   height: 730px;
   padding: 10% 0;
 }
+
+@media (max-width: 768px) {
+  .home {
+    height: 1050px;
+  }
+}

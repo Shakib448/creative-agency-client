@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Actor&display=swap");
 .footer {
   background-color: #fbd062;
 }
@@ -7,7 +7,7 @@
   height: 50px;
   border: none;
   font-size: 15px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Actor", sans-serif;
   font-weight: bold;
 }
 
@@ -18,7 +18,8 @@
   height: 50px;
   border: none;
   font-size: 15px;
-  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-family: "Actor", sans-serif;
 }
 
 .form__focusEmail:focus {
@@ -35,7 +36,8 @@
 .form__focusMessage {
   border: none;
   font-size: 15px;
-  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-family: "Actor", sans-serif;
 }
 
 .form__focusMessage:focus {
