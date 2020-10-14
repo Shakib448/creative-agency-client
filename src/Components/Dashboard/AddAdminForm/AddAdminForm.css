@@ -1,0 +1,15 @@
+.addAdminForm {
+  padding: 5% 0;
+}
+
+.addAdminForm__btn {
+  padding: 11px 40px;
+}
+
+.addAdminForm__Email {
+  height: 50px;
+  border: none;
+  font-size: 15px;
+  font-family: "Actor", sans-serif;
+  font-weight: bold;
+}

@@ -12,6 +12,7 @@ import AddIcon from "@material-ui/icons/Add";
 import GroupAddIcon from "@material-ui/icons/GroupAdd";
 import ServiceList from "../ServiceList/ServiceList";
 import ReviewForm from "../ReviewForm/ReviewForm";
+import AddAdminForm from "../AddAdminForm/AddAdminForm";
 
 const Sidebar = ({ heading }) => {
   const [userData, setUserData] = useContext(userInformationData);
@@ -170,6 +171,7 @@ const Sidebar = ({ heading }) => {
           {location.pathname === "/order" && <OrderForm />}
           {location.pathname === "/service-list" && <ServiceList />}
           {location.pathname === "/review" && <ReviewForm />}
+          {location.pathname === "/add-admin" && <AddAdminForm />}
         </div>
       </div>
     </div>
