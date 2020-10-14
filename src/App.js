@@ -19,6 +19,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/google-sign-in" component={GoogleLogin} />
             <Route exact path="/order" component={Order} />
+            <Route exact path="/service-list" component={Order} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="*" component={NotFound} />
           </Switch>

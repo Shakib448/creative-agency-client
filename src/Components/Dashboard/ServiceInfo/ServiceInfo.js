@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
 
-const Order = () => {
+const ServiceInfo = () => {
   return (
     <>
       <Sidebar />
@@ -9,4 +9,4 @@ const Order = () => {
   );
 };
 
-export default Order;
+export default ServiceInfo;

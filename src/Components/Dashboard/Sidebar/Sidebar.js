@@ -10,8 +10,9 @@ import SpeakerNotesOutlinedIcon from "@material-ui/icons/SpeakerNotesOutlined";
 import TextsmsOutlinedIcon from "@material-ui/icons/TextsmsOutlined";
 import AddIcon from "@material-ui/icons/Add";
 import GroupAddIcon from "@material-ui/icons/GroupAdd";
+import ServiceList from "../ServiceList/ServiceList";
 
-const Sidebar = ({ heading, match }) => {
+const Sidebar = () => {
   const [userData, setUserData] = useContext(userInformationData);
   const location = useLocation();
 
@@ -34,6 +35,7 @@ const Sidebar = ({ heading, match }) => {
         </div>
         <div className="list-group list-group-flush ">
           <NavLink
+            style={{ fontFamily: "Piazzolla, serif" }}
             to="/order"
             activeClassName="sidebar__active"
             className="list-group-item list-group-item-action  "
@@ -41,6 +43,7 @@ const Sidebar = ({ heading, match }) => {
             <ShoppingCartOutlinedIcon /> Order
           </NavLink>
           <NavLink
+            style={{ fontFamily: "Piazzolla, serif" }}
             to="/service-list"
             activeClassName="sidebar__active"
             className="list-group-item list-group-item-action "
@@ -48,6 +51,7 @@ const Sidebar = ({ heading, match }) => {
             <SpeakerNotesOutlinedIcon /> Service list
           </NavLink>
           <NavLink
+            style={{ fontFamily: "Piazzolla, serif" }}
             to="/review"
             activeClassName="sidebar__active"
             className="list-group-item list-group-item-action "
@@ -55,6 +59,7 @@ const Sidebar = ({ heading, match }) => {
             <TextsmsOutlinedIcon /> Review
           </NavLink>
           <NavLink
+            style={{ fontFamily: "Piazzolla, serif" }}
             to="/add-service"
             activeClassName="sidebar__active"
             className="list-group-item list-group-item-action "
@@ -62,6 +67,7 @@ const Sidebar = ({ heading, match }) => {
             <AddIcon /> Add Service
           </NavLink>
           <NavLink
+            style={{ fontFamily: "Piazzolla, serif" }}
             to="/add-admin"
             activeClassName="sidebar__active"
             className="list-group-item list-group-item-action "
@@ -76,7 +82,13 @@ const Sidebar = ({ heading, match }) => {
           style={{ background: "#ffffff" }}
           className="navbar navbar-expand-lg navbar-light "
         >
-          <h3 className="d-none d-md-none d-lg-block ">{heading}</h3>
+          <h3
+            className="d-none d-md-none d-lg-block "
+            style={{ fontFamily: "Piazzolla, serif" }}
+          >
+            {location.pathname === "/order" && "Order"}
+            {location.pathname === "/service-list" && "Service list"}
+          </h3>
           <img
             src={logo}
             width="150"
@@ -103,6 +115,7 @@ const Sidebar = ({ heading, match }) => {
             <ul className="navbar-nav ml-auto mt-2 mt-lg-0 d-sm-block d-md-block d-lg-none ">
               <li className="nav-item active">
                 <NavLink
+                  style={{ fontFamily: "Piazzolla, serif" }}
                   to="/order"
                   activeClassName="sidebar__active"
                   className="list-group-item list-group-item-action  "
@@ -112,6 +125,7 @@ const Sidebar = ({ heading, match }) => {
               </li>
               <li className="nav-item">
                 <NavLink
+                  style={{ fontFamily: "Piazzolla, serif" }}
                   to="/service-list"
                   activeClassName="sidebar__active"
                   className="list-group-item list-group-item-action "
@@ -121,6 +135,7 @@ const Sidebar = ({ heading, match }) => {
               </li>
               <li className="nav-item">
                 <NavLink
+                  style={{ fontFamily: "Piazzolla, serif" }}
                   to="/review"
                   activeClassName="sidebar__active"
                   className="list-group-item list-group-item-action "
@@ -130,6 +145,7 @@ const Sidebar = ({ heading, match }) => {
               </li>
               <li className="nav-item">
                 <NavLink
+                  style={{ fontFamily: "Piazzolla, serif" }}
                   to="/add-service"
                   activeClassName="sidebar__active"
                   className="list-group-item list-group-item-action "
@@ -139,6 +155,7 @@ const Sidebar = ({ heading, match }) => {
               </li>
               <li className="nav-item">
                 <NavLink
+                  style={{ fontFamily: "Piazzolla, serif" }}
                   to="/add-admin"
                   activeClassName="sidebar__active"
                   className="list-group-item list-group-item-action "
@@ -151,6 +168,7 @@ const Sidebar = ({ heading, match }) => {
         </nav>
         <div className="container-fluid">
           {location.pathname === "/order" && <OrderForm />}
+          {location.pathname === "/service-list" && <ServiceList />}
         </div>
       </div>
     </div>
