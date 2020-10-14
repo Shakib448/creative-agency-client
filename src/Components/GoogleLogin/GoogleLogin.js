@@ -7,7 +7,7 @@ import logo from "../../images/logos/logo.png";
 import firebaseConfig from "./Firebase.config";
 import { userInformationData } from "../../App";
 import google from "../../images/logos/googleico.png";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 firebase.initializeApp(firebaseConfig);
 
@@ -15,6 +15,7 @@ const GoogleLogin = () => {
   const [userData, setUserData] = useContext(userInformationData);
   //Location
   let location = useLocation();
+  let history = useHistory();
 
   let { from } = location.state || { from: { pathname: "/" } };
 
@@ -31,7 +32,7 @@ const GoogleLogin = () => {
         img: photoURL,
       };
       setUserData(singedInUser);
-      //   history.replace(from);
+      history.replace(from);
     } catch (err) {
       console.warn(err);
     }

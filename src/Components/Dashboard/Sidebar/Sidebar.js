@@ -19,6 +19,7 @@ import AdminServiceListTable from "../AdminServiceListTable/AdminServiceListTabl
 
 const Sidebar = ({ heading }) => {
   const [userData, setUserData] = useContext(userInformationData);
+  console.log(userData);
   const location = useLocation();
 
   return (
@@ -188,10 +189,10 @@ const Sidebar = ({ heading }) => {
               </li>
             </ul>
             <div className="ml-auto  d-none d-md-none d-lg-block ">
-              <Avatar />
+              <Avatar src={userData.img} />
             </div>
             <div style={{ margin: "0 20px" }}>
-              <b>asdfasdfsadf</b>
+              <b>{userData.name}</b>
             </div>
           </div>
         </nav>

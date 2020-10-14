@@ -12,6 +12,7 @@ import ServiceInfo from "./Components/Dashboard/ServiceInfo/ServiceInfo";
 import AddAdmin from "./Components/Dashboard/AddAdmin/AddAdmin";
 import AddService from "./Components/Dashboard/AddService/AddService";
 import AdminServiceList from "./Components/Dashboard/AdminServiceList/AdminServiceList";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 export const userInformationData = createContext();
 function App() {
@@ -30,7 +31,9 @@ function App() {
               path="/admin-service-list"
               component={AdminServiceList}
             />
-            <Route exact path="/service-list" component={ServiceInfo} />
+            <PrivateRoute exact path="/service-list">
+              <ServiceInfo />
+            </PrivateRoute>
             <Route exact path="/add-admin" component={AddAdmin} />
             <Route exact path="/add-service" component={AddService} />
             <Route exact path="/dashboard" component={Dashboard} />
