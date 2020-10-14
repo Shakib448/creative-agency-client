@@ -6,8 +6,9 @@ import Sidebar from "../Sidebar/Sidebar";
 const Dashboard = () => {
   return (
     <>
-      <Sidebar />
-      <div className="text-center mt-5 align-content-center">
+      <Sidebar heading="Order" />
+
+      <div>
         <input type="file" name="file" id="file" className="inputFile" />
         <label for="file">
           <span>

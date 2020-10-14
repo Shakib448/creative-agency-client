@@ -1,16 +1,24 @@
 import React, { useContext } from "react";
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { userInformationData } from "../../../App";
 import "./Sidebar.css";
+import logo from "../../../images/logos/logo.png";
 
-const Sidebar = () => {
+const Sidebar = ({ heading }) => {
   const [userData, setUserData] = useContext(userInformationData);
 
   return (
     <div className="d-flex" id="wrapper">
       <div className="border-right border-0 " id="sidebar-wrapper">
-        <div className="sidebar-heading">Start Bootstrap </div>
+        <div className="sidebar-heading">
+          <img
+            src={logo}
+            width="150"
+            height="50"
+            className="d-inline-block align-top mt-2"
+            alt="volunteer network logo"
+          />
+        </div>
         <div className="list-group list-group-flush">
           <a
             href="#"
@@ -51,9 +59,12 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div id="page-content-wrapper">
-        <nav className="navbar navbar-expand-lg navbar-light ">
-          <h1>Dashboard</h1>
+      <div style={{ background: "#F4F7FC" }} id="page-content-wrapper">
+        <nav
+          style={{ background: "#ffffff" }}
+          className="navbar navbar-expand-lg navbar-light "
+        >
+          <h3>{heading}</h3>
 
           <button
             className="navbar-toggler"
@@ -110,6 +121,21 @@ const Sidebar = () => {
             </ul>
           </div>
         </nav>
+        <div className="container-fluid">
+          <h1 className="mt-4">Simple Sidebar</h1>
+          <p>
+            The starting state of the menu will appear collapsed on smaller
+            screens, and will appear non-collapsed on larger screens. When
+            toggled using the button below, the menu will change.
+          </p>
+          <p>
+            Make sure to keep all page content within the{" "}
+            <code>#page-content-wrapper</code>. The top navbar is optional, and
+            just for demonstration. Just create an element with the{" "}
+            <code>#menu-toggle</code> ID which will toggle the menu when
+            clicked.
+          </p>
+        </div>
       </div>
     </div>
   );
