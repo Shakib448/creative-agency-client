@@ -4,7 +4,7 @@ import Sidebar from "../Sidebar/Sidebar";
 const Order = () => {
   return (
     <>
-      <Sidebar />
+      <Sidebar heading="Order" />
     </>
   );
 };

@@ -7,6 +7,8 @@ import Home from "./Components/Home/Home/Home";
 import NotFound from "./Components/NotFound/NotFound";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 import Order from "./Components/Dashboard/Order/Order";
+import Review from "./Components/Dashboard/Review/Review";
+import ServiceInfo from "./Components/Dashboard/ServiceInfo/ServiceInfo";
 
 export const userInformationData = createContext();
 function App() {
@@ -19,7 +21,8 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/google-sign-in" component={GoogleLogin} />
             <Route exact path="/order" component={Order} />
-            <Route exact path="/service-list" component={Order} />
+            <Route exact path="/review" component={Review} />
+            <Route exact path="/service-list" component={ServiceInfo} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="*" component={NotFound} />
           </Switch>

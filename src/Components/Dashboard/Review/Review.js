@@ -1,12 +1,12 @@
 import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
 
-const ServiceInfo = () => {
+const Review = () => {
   return (
     <>
-      <Sidebar heading="Service list" />
+      <Sidebar heading="Review" />
     </>
   );
 };
 
-export default ServiceInfo;
+export default Review;

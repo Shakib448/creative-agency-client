@@ -11,8 +11,9 @@ import TextsmsOutlinedIcon from "@material-ui/icons/TextsmsOutlined";
 import AddIcon from "@material-ui/icons/Add";
 import GroupAddIcon from "@material-ui/icons/GroupAdd";
 import ServiceList from "../ServiceList/ServiceList";
+import ReviewForm from "../ReviewForm/ReviewForm";
 
-const Sidebar = () => {
+const Sidebar = ({ heading }) => {
   const [userData, setUserData] = useContext(userInformationData);
   const location = useLocation();
 
@@ -86,8 +87,7 @@ const Sidebar = () => {
             className="d-none d-md-none d-lg-block "
             style={{ fontFamily: "Piazzolla, serif" }}
           >
-            {location.pathname === "/order" && "Order"}
-            {location.pathname === "/service-list" && "Service list"}
+            {heading}
           </h3>
           <img
             src={logo}
@@ -169,6 +169,7 @@ const Sidebar = () => {
         <div className="container-fluid">
           {location.pathname === "/order" && <OrderForm />}
           {location.pathname === "/service-list" && <ServiceList />}
+          {location.pathname === "/review" && <ReviewForm />}
         </div>
       </div>
     </div>
