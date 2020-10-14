@@ -10,4 +10,5 @@
   border: none;
   padding: 10px;
   box-shadow: 10px 10px 50px lightgray;
+  cursor: pointer;
 }

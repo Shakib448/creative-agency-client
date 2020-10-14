@@ -55,7 +55,9 @@ const ClientFeedBack = () => {
                     </Card.Body>
                   </Col>
                   <Card.Body>
-                    <Card.Text>{client.description}</Card.Text>
+                    <Card.Text className="text-secondary">
+                      {client.description}
+                    </Card.Text>
                   </Card.Body>
                 </Row>
               </Card>
