@@ -22,7 +22,7 @@ const Sidebar = ({ heading }) => {
   const location = useLocation();
 
   return (
-    <div className="d-flex" id="wrapper">
+    <div className="d-flex mb-5" id="wrapper">
       <div
         className="border-right border-0 d-none d-md-none d-lg-block "
         id="sidebar-wrapper"

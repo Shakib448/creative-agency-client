@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Dropdown,
@@ -9,6 +9,12 @@ import {
 import "./AdminServiceListTable.css";
 
 const AdminServiceListTable = () => {
+  const [status, setStatus] = useState("Pending");
+
+  const handleStatus = (newStatus) => {
+    setStatus(newStatus);
+  };
+
   return (
     <Container className="adminServiceListTable">
       <Table borderless hover>
@@ -28,9 +34,13 @@ const AdminServiceListTable = () => {
             <td>@mdo</td>
             <td>@mdo</td>
             <td>
-              <NavDropdown title="Pending" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.2">Done</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">On Going</NavDropdown.Item>
+              <NavDropdown title={status} id="basic-nav-dropdown">
+                <NavDropdown.Item onClick={() => handleStatus("Done")}>
+                  Done
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => handleStatus("On Going")}>
+                  On Going
+                </NavDropdown.Item>
               </NavDropdown>
             </td>
           </tr>
