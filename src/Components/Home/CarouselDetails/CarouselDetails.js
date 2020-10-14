@@ -1,10 +1,8 @@
 import React from "react";
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
-// import { Carousel } from "react-responsive-carousel";
 import "./CarouselDetails.css";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 import img1 from "../../../images/carousel-1.png";
 import img2 from "../../../images/carousel-2.png";

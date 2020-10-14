@@ -14,6 +14,8 @@ import ServiceList from "../ServiceList/ServiceList";
 import ReviewForm from "../ReviewForm/ReviewForm";
 import AddAdminForm from "../AddAdminForm/AddAdminForm";
 import AddServiceForm from "../AddServiceForm/AddServiceForm";
+import { Avatar } from "@material-ui/core";
+import AdminServiceListTable from "../AdminServiceListTable/AdminServiceListTable";
 
 const Sidebar = ({ heading }) => {
   const [userData, setUserData] = useContext(userInformationData);
@@ -52,6 +54,14 @@ const Sidebar = ({ heading }) => {
             className="list-group-item list-group-item-action "
           >
             <SpeakerNotesOutlinedIcon /> Service list
+          </NavLink>
+          <NavLink
+            style={{ fontFamily: "Piazzolla, serif" }}
+            to="/admin-service-list"
+            activeClassName="sidebar__active"
+            className="list-group-item list-group-item-action "
+          >
+            <SpeakerNotesOutlinedIcon /> Admin Service list
           </NavLink>
           <NavLink
             style={{ fontFamily: "Piazzolla, serif" }}
@@ -138,6 +148,17 @@ const Sidebar = ({ heading }) => {
               <li className="nav-item">
                 <NavLink
                   style={{ fontFamily: "Piazzolla, serif" }}
+                  to="/admin-service-list"
+                  activeClassName="sidebar__active"
+                  className="list-group-item list-group-item-action "
+                >
+                  <SpeakerNotesOutlinedIcon /> Admin Service list
+                </NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink
+                  style={{ fontFamily: "Piazzolla, serif" }}
                   to="/review"
                   activeClassName="sidebar__active"
                   className="list-group-item list-group-item-action "
@@ -166,6 +187,12 @@ const Sidebar = ({ heading }) => {
                 </NavLink>
               </li>
             </ul>
+            <div className="ml-auto  d-none d-md-none d-lg-block ">
+              <Avatar />
+            </div>
+            <div style={{ margin: "0 20px" }}>
+              <b>asdfasdfsadf</b>
+            </div>
           </div>
         </nav>
         <div className="container-fluid">
@@ -174,6 +201,9 @@ const Sidebar = ({ heading }) => {
           {location.pathname === "/review" && <ReviewForm />}
           {location.pathname === "/add-admin" && <AddAdminForm />}
           {location.pathname === "/add-service" && <AddServiceForm />}
+          {location.pathname === "/admin-service-list" && (
+            <AdminServiceListTable />
+          )}
         </div>
       </div>
     </div>

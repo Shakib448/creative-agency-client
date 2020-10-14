@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Col,
-  Container,
-  Nav,
-  Navbar,
-  NavDropdown,
-  Row,
-} from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 import frame from "../../../images/logos/Frame.png";
 import "./Banner.css";

@@ -92,11 +92,7 @@ const AddServiceForm = () => {
                 </span>
               </Form.Group>
             </Col>
-            <Col md={2}>
-              <br />
-              <br />
-              <br />
-
+            <Col md={2} className="addServiceForm__btn">
               <Button
                 className="addAdminForm__btn"
                 type="submit"

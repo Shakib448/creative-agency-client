@@ -11,6 +11,7 @@ import Review from "./Components/Dashboard/Review/Review";
 import ServiceInfo from "./Components/Dashboard/ServiceInfo/ServiceInfo";
 import AddAdmin from "./Components/Dashboard/AddAdmin/AddAdmin";
 import AddService from "./Components/Dashboard/AddService/AddService";
+import AdminServiceList from "./Components/Dashboard/AdminServiceList/AdminServiceList";
 
 export const userInformationData = createContext();
 function App() {
@@ -24,6 +25,11 @@ function App() {
             <Route exact path="/google-sign-in" component={GoogleLogin} />
             <Route exact path="/order" component={Order} />
             <Route exact path="/review" component={Review} />
+            <Route
+              exact
+              path="/admin-service-list"
+              component={AdminServiceList}
+            />
             <Route exact path="/service-list" component={ServiceInfo} />
             <Route exact path="/add-admin" component={AddAdmin} />
             <Route exact path="/add-service" component={AddService} />

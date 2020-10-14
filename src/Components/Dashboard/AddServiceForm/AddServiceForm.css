@@ -7,6 +7,10 @@
   font-weight: bold;
 }
 
+.addServiceForm__btn {
+  margin: 13% 0;
+}
+
 .addServiceForm__form {
   height: 50px;
   border: none;
@@ -19,4 +23,10 @@
   outline: none;
   border: none;
   box-shadow: none;
+}
+
+@media (max-width: 756px) {
+  .addServiceForm__btn {
+    margin: 5% 0;
+  }
 }

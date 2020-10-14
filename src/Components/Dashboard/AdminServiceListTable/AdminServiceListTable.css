@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap");
+
+.adminServiceListTable {
+  padding: 2% 2%;
+  background-color: #fff;
+  margin: 40px 0;
+  border-radius: 25px;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.adminServiceListTable__tableHead {
+  background-color: #f5f6fa;
+  color: #707071;
+  font-weight: 400;
+}
+
+a#basic-nav-dropdown {
+  color: red;
+}
