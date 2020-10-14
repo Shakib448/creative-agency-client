@@ -24,19 +24,34 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/google-sign-in" component={GoogleLogin} />
-            <Route exact path="/order" component={Order} />
-            <Route exact path="/review" component={Review} />
-            <Route
-              exact
-              path="/admin-service-list"
-              component={AdminServiceList}
-            />
+            <PrivateRoute exact path="/order">
+              <Order />
+            </PrivateRoute>
+
+            <PrivateRoute exact path="/review">
+              <Review />
+            </PrivateRoute>
+
+            <PrivateRoute exact path="/admin-service-list">
+              <AdminServiceList />
+            </PrivateRoute>
+
             <PrivateRoute exact path="/service-list">
               <ServiceInfo />
             </PrivateRoute>
-            <Route exact path="/add-admin" component={AddAdmin} />
-            <Route exact path="/add-service" component={AddService} />
-            <Route exact path="/dashboard" component={Dashboard} />
+
+            <PrivateRoute exact path="/add-admin">
+              <AddAdmin />
+            </PrivateRoute>
+
+            <PrivateRoute exact path="/add-service">
+              <AddService />
+            </PrivateRoute>
+
+            <PrivateRoute exact path="/dashboard">
+              <Dashboard />
+            </PrivateRoute>
+
             <Route exact path="*" component={NotFound} />
           </Switch>
         </Router>

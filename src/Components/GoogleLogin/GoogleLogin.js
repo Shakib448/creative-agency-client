@@ -32,10 +32,24 @@ const GoogleLogin = () => {
         img: photoURL,
       };
       setUserData(singedInUser);
+      storeAuthToken();
       history.replace(from);
     } catch (err) {
       console.warn(err);
     }
+  };
+
+  const storeAuthToken = () => {
+    firebase
+      .auth()
+      .currentUser.getIdToken(true)
+      .then(function (idToken) {
+        sessionStorage.setItem("token", idToken);
+        history.replace(from);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
   return (
     <Container className="googleLogin">

@@ -19,7 +19,6 @@ import AdminServiceListTable from "../AdminServiceListTable/AdminServiceListTabl
 
 const Sidebar = ({ heading }) => {
   const [userData, setUserData] = useContext(userInformationData);
-  console.log(userData);
   const location = useLocation();
 
   return (
