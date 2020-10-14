@@ -1,10 +1,9 @@
 import React from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import "./ServiceList.css";
-import img from "../../../images/icons/service1.png";
-import img1 from "../../../images/customer-1.png";
-import img2 from "../../../images/customer-2.png";
-import img3 from "../../../images/customer-3.png";
+import img1 from "../../../images/icons/service1.png";
+import img2 from "../../../images/icons/service2.png";
+import img3 from "../../../images/icons/service3.png";
 
 const clients = [
   {
@@ -45,12 +44,15 @@ const ServiceList = () => {
                   />
                   <Col sm={7}>
                     <Card.Body className="text-right">
-                      <Button variant="danger">Pending</Button>
+                      <Button variant="outline-danger">Pending</Button>
                     </Card.Body>
                   </Col>
                   <Card.Body>
                     <Card.Title> {client.jobTitle} </Card.Title>
-                    <Card.Text>{client.description}</Card.Text>
+                    <Card.Text className="text-secondary">
+                      {" "}
+                      {client.description}
+                    </Card.Text>
                   </Card.Body>
                 </Row>
               </Card>
