@@ -17,19 +17,19 @@ const responsive = {
 };
 const items = [
   <div className="item">
-    <img className="carouselDetails__img" alt="" src={img1} fluid />
+    <img className="carouselDetails__img" alt="" src={img1} />
   </div>,
   <div className="item">
-    <img className="carouselDetails__img" alt="" src={img2} fluid />
+    <img className="carouselDetails__img" alt="" src={img2} />
   </div>,
   <div className="item">
-    <img className="carouselDetails__imgExt" alt="" src={img3} fluid />
+    <img className="carouselDetails__imgExt" alt="" src={img3} />
   </div>,
   <div className="item">
-    <img className="carouselDetails__img" alt="" src={img4} fluid />
+    <img className="carouselDetails__img" alt="" src={img4} />
   </div>,
   <div className="item">
-    <img className="carouselDetails__img" alt="" src={img5} fluid />
+    <img className="carouselDetails__img" alt="" src={img5} />
   </div>,
 ];
 

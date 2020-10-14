@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import "./Service.css";
 import Services from "../Services/Services";
@@ -29,6 +29,15 @@ const services = [
 ];
 
 const Service = () => {
+  const [service, setService] = useState({});
+
+  console.log(service);
+
+  const handleService = (service) => {
+    const newService = { service };
+    setService(newService);
+  };
+
   return (
     <section className="service">
       <Container>
@@ -39,7 +48,11 @@ const Service = () => {
         </Row>
         <Row className="justify-content-center mt-4 ">
           {services.map((service, id) => (
-            <Services service={service} key={id} />
+            <Services
+              service={service}
+              handleService={handleService}
+              key={id}
+            />
           ))}
         </Row>
       </Container>
