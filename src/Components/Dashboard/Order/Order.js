@@ -1,5 +1,4 @@
 import React from "react";
-import "./Order.css";
 import Sidebar from "../Sidebar/Sidebar";
 
 const Order = () => {

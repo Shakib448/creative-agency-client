@@ -17,15 +17,20 @@ const Sidebar = ({ heading, match }) => {
 
   return (
     <div className="d-flex" id="wrapper">
-      <div className="border-right border-0 " id="sidebar-wrapper">
+      <div
+        className="border-right border-0 d-none d-md-none d-lg-block "
+        id="sidebar-wrapper"
+      >
         <div className="sidebar-heading">
-          <img
-            src={logo}
-            width="150"
-            height="50"
-            className="d-inline-block align-top mt-2"
-            alt="volunteer network logo"
-          />
+          <NavLink to="/">
+            <img
+              src={logo}
+              width="150"
+              height="50"
+              className="d-inline-block align-top mt-2"
+              alt="volunteer network logo"
+            />
+          </NavLink>
         </div>
         <div className="list-group list-group-flush ">
           <NavLink
@@ -71,8 +76,14 @@ const Sidebar = ({ heading, match }) => {
           style={{ background: "#ffffff" }}
           className="navbar navbar-expand-lg navbar-light "
         >
-          <h3>{heading}</h3>
-
+          <h3 className="d-none d-md-none d-lg-block ">{heading}</h3>
+          <img
+            src={logo}
+            width="150"
+            height="50"
+            className="d-inline-block align-top mt-2 d-sm-block d-md-block d-lg-none "
+            alt="volunteer network logo"
+          />
           <button
             className="navbar-toggler"
             type="button"
@@ -85,45 +96,55 @@ const Sidebar = ({ heading, match }) => {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+          <div
+            className="collapse navbar-collapse "
+            id="navbarSupportedContent"
+          >
+            <ul className="navbar-nav ml-auto mt-2 mt-lg-0 d-sm-block d-md-block d-lg-none ">
               <li className="nav-item active">
-                <a className="nav-link" to="/">
-                  Home <span className="sr-only">(current)</span>
-                </a>
+                <NavLink
+                  to="/order"
+                  activeClassName="sidebar__active"
+                  className="list-group-item list-group-item-action  "
+                >
+                  <ShoppingCartOutlinedIcon /> Order
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" to="/">
-                  Link
-                </a>
+                <NavLink
+                  to="/service-list"
+                  activeClassName="sidebar__active"
+                  className="list-group-item list-group-item-action "
+                >
+                  <SpeakerNotesOutlinedIcon /> Service list
+                </NavLink>
               </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  to="/"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
+              <li className="nav-item">
+                <NavLink
+                  to="/review"
+                  activeClassName="sidebar__active"
+                  className="list-group-item list-group-item-action "
                 >
-                  Dropdown
-                </a>
-                <div
-                  className="dropdown-menu dropdown-menu-right"
-                  aria-labelledby="navbarDropdown"
+                  <TextsmsOutlinedIcon /> Review
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/add-service"
+                  activeClassName="sidebar__active"
+                  className="list-group-item list-group-item-action "
                 >
-                  <a className="dropdown-item" to="/">
-                    Action
-                  </a>
-                  <a className="dropdown-item" to="/">
-                    Another action
-                  </a>
-                  <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" to="/">
-                    Something else here
-                  </a>
-                </div>
+                  <AddIcon /> Add Service
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/add-admin"
+                  activeClassName="sidebar__active"
+                  className="list-group-item list-group-item-action "
+                >
+                  <GroupAddIcon /> Make Admin
+                </NavLink>
               </li>
             </ul>
           </div>
