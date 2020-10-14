@@ -1,11 +1,19 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { userInformationData } from "../../../App";
 import "./Sidebar.css";
 import logo from "../../../images/logos/logo.png";
+import OrderForm from "../OrderForm/OrderForm";
 
-const Sidebar = ({ heading }) => {
+import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+import SpeakerNotesOutlinedIcon from "@material-ui/icons/SpeakerNotesOutlined";
+import TextsmsOutlinedIcon from "@material-ui/icons/TextsmsOutlined";
+import AddIcon from "@material-ui/icons/Add";
+import GroupAddIcon from "@material-ui/icons/GroupAdd";
+
+const Sidebar = ({ heading, match }) => {
   const [userData, setUserData] = useContext(userInformationData);
+  const location = useLocation();
 
   return (
     <div className="d-flex" id="wrapper">
@@ -19,43 +27,42 @@ const Sidebar = ({ heading }) => {
             alt="volunteer network logo"
           />
         </div>
-        <div className="list-group list-group-flush">
-          <a
-            href="#"
-            className="list-group-item list-group-item-action border-bottom-0"
+        <div className="list-group list-group-flush ">
+          <NavLink
+            to="/order"
+            activeClassName="sidebar__active"
+            className="list-group-item list-group-item-action  "
           >
-            Dashboard
-          </a>
-          <a
-            href="#"
-            className="list-group-item list-group-item-action border-bottom-0"
+            <ShoppingCartOutlinedIcon /> Order
+          </NavLink>
+          <NavLink
+            to="/service-list"
+            activeClassName="sidebar__active"
+            className="list-group-item list-group-item-action "
           >
-            Shortcuts
-          </a>
-          <a
-            href="#"
-            className="list-group-item list-group-item-action border-bottom-0"
+            <SpeakerNotesOutlinedIcon /> Service list
+          </NavLink>
+          <NavLink
+            to="/review"
+            activeClassName="sidebar__active"
+            className="list-group-item list-group-item-action "
           >
-            Overview
-          </a>
-          <a
-            href="#"
-            className="list-group-item list-group-item-action border-bottom-0"
+            <TextsmsOutlinedIcon /> Review
+          </NavLink>
+          <NavLink
+            to="/add-service"
+            activeClassName="sidebar__active"
+            className="list-group-item list-group-item-action "
           >
-            Events
-          </a>
-          <a
-            href="#"
-            className="list-group-item list-group-item-action border-bottom-0"
+            <AddIcon /> Add Service
+          </NavLink>
+          <NavLink
+            to="/add-admin"
+            activeClassName="sidebar__active"
+            className="list-group-item list-group-item-action "
           >
-            Profile
-          </a>
-          <a
-            href="#"
-            className="list-group-item list-group-item-action border-bottom-0"
-          >
-            Status
-          </a>
+            <GroupAddIcon /> Make Admin
+          </NavLink>
         </div>
       </div>
 
@@ -81,19 +88,19 @@ const Sidebar = ({ heading }) => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
+                <a className="nav-link" to="/">
                   Home <span className="sr-only">(current)</span>
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" to="/">
                   Link
                 </a>
               </li>
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
-                  href="#"
+                  to="/"
                   id="navbarDropdown"
                   role="button"
                   data-toggle="dropdown"
@@ -106,14 +113,14 @@ const Sidebar = ({ heading }) => {
                   className="dropdown-menu dropdown-menu-right"
                   aria-labelledby="navbarDropdown"
                 >
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" to="/">
                     Action
                   </a>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" to="/">
                     Another action
                   </a>
                   <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" to="/">
                     Something else here
                   </a>
                 </div>
@@ -122,19 +129,7 @@ const Sidebar = ({ heading }) => {
           </div>
         </nav>
         <div className="container-fluid">
-          <h1 className="mt-4">Simple Sidebar</h1>
-          <p>
-            The starting state of the menu will appear collapsed on smaller
-            screens, and will appear non-collapsed on larger screens. When
-            toggled using the button below, the menu will change.
-          </p>
-          <p>
-            Make sure to keep all page content within the{" "}
-            <code>#page-content-wrapper</code>. The top navbar is optional, and
-            just for demonstration. Just create an element with the{" "}
-            <code>#menu-toggle</code> ID which will toggle the menu when
-            clicked.
-          </p>
+          {location.pathname === "/order" && <OrderForm />}
         </div>
       </div>
     </div>

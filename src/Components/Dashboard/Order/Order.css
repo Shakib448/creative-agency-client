@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Actor&display=swap");
+
+.inputFile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputFile + label {
+  font-size: 20px;
+  font-weight: 700;
+  color: #109c50;
+  background-color: #deffed;
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #7dd0a3;
+  padding: 15px;
+  border-radius: 10px;
+  font-family: "Actor", sans-serif;
+  letter-spacing: 2px;
+}
+
+/* .inputFile:focus + label,
+.inputFile + label:hover {
+  background-color: red;
+} */
+
+.inputFile + label * {
+  pointer-events: none;
+}
+
+.inputFile:focus + label {
+  outline: none;
+}

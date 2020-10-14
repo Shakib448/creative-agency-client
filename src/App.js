@@ -6,6 +6,7 @@ import GoogleLogin from "./Components/GoogleLogin/GoogleLogin";
 import Home from "./Components/Home/Home/Home";
 import NotFound from "./Components/NotFound/NotFound";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+import Order from "./Components/Dashboard/Order/Order";
 
 export const userInformationData = createContext();
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/google-sign-in" component={GoogleLogin} />
+            <Route exact path="/order" component={Order} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="*" component={NotFound} />
           </Switch>
