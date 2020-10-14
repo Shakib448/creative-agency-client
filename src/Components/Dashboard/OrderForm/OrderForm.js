@@ -59,6 +59,25 @@ const OrderForm = () => {
 
               <Form.Group>
                 <Form.Control
+                  name="service"
+                  type="text"
+                  placeholder="Your service"
+                  className="order__form"
+                  ref={register({
+                    required: "Service is required",
+                    pattern: {
+                      value: /[A-Z][a-z]/,
+                      message: "First text should be capitalized",
+                    },
+                  })}
+                />
+                <span style={{ color: "red" }}>
+                  {errors.service && errors.service.message}
+                </span>
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Control
                   as="textarea"
                   rows={6}
                   name="message"
@@ -81,6 +100,55 @@ const OrderForm = () => {
                   {errors.message && errors.message.message}
                 </span>
               </Form.Group>
+              <Row>
+                <Col md={6}>
+                  <Form.Group>
+                    <Form.Control
+                      name="price"
+                      type="text"
+                      placeholder="Price"
+                      className="order__form"
+                      ref={register({
+                        required: "Price is required",
+                        pattern: {
+                          value: /[0-9]/,
+                          message: "Price should be number",
+                        },
+                      })}
+                    />
+                    <span style={{ color: "red" }}>
+                      {errors.price && errors.price.message}
+                    </span>
+                  </Form.Group>
+                </Col>
+                <Col md={6}>
+                  <div className="order">
+                    <input
+                      type="file"
+                      name="file"
+                      id="file"
+                      className="inputFile"
+                      ref={register({
+                        required: true,
+                      })}
+                    />
+                    <label htmlFor="file">
+                      <span>
+                        {" "}
+                        <CloudUploadIcon />{" "}
+                      </span>
+                      <span style={{ fontSize: "14px" }}>
+                        Upload project file
+                      </span>
+                    </label>
+                    <br />
+                    <span style={{ color: "red" }}>
+                      {" "}
+                      {errors.file && "File is required"}{" "}
+                    </span>
+                  </div>
+                </Col>
+              </Row>
               <input
                 className="btn btn-dark pl-5 pr-5 pt-2 pb-2 mainNav__btn"
                 type="submit"
@@ -90,16 +158,6 @@ const OrderForm = () => {
           </Col>
         </Row>
       </Container>
-      <div className="order">
-        <input type="file" name="file" id="file" className="inputFile" />
-        <label htmlFor="file">
-          <span>
-            {" "}
-            <CloudUploadIcon />{" "}
-          </span>
-          <span style={{ fontSize: "14px" }}>Upload project file</span>
-        </label>
-      </div>
     </div>
   );
 };
