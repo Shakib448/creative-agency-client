@@ -11,7 +11,7 @@ const ReviewForm = () => {
 
   return (
     <>
-      <Container>
+      <Container className="reviewForm">
         <Row>
           <Col md={{ span: 6 }} className="mt-5 mb-5">
             <Form onSubmit={handleSubmit(onSubmit)}>

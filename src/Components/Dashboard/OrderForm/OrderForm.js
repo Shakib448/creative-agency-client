@@ -11,8 +11,8 @@ const OrderForm = () => {
   console.log(watch("example"));
 
   return (
-    <div>
-      <Container>
+    <>
+      <Container className="order">
         <Row>
           <Col md={{ span: 6 }} className="mt-5 mb-5">
             <Form onSubmit={handleSubmit(onSubmit)}>
@@ -158,7 +158,7 @@ const OrderForm = () => {
           </Col>
         </Row>
       </Container>
-    </div>
+    </>
   );
 };
 

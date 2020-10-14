@@ -1,19 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Actor&display=swap");
 
-.reviewForm {
+.addServiceForm {
   font-family: "Actor", sans-serif;
   font-size: 20px;
+  padding: 5%;
   font-weight: bold;
 }
-.reviewForm__focus {
+
+.addServiceForm__form {
   height: 50px;
   border: none;
   font-size: 15px;
   font-family: "Actor", sans-serif;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-.reviewForm__focus:focus {
+.addServiceForm__form:focus {
   outline: none;
   border: none;
   box-shadow: none;

@@ -1,5 +1,9 @@
 .addAdminForm {
   padding: 5% 0;
+  font-family: "Actor", sans-serif;
+  font-size: 20px;
+  padding: 5%;
+  font-weight: bold;
 }
 
 .addAdminForm__btn {

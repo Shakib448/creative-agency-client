@@ -10,6 +10,7 @@ import Order from "./Components/Dashboard/Order/Order";
 import Review from "./Components/Dashboard/Review/Review";
 import ServiceInfo from "./Components/Dashboard/ServiceInfo/ServiceInfo";
 import AddAdmin from "./Components/Dashboard/AddAdmin/AddAdmin";
+import AddService from "./Components/Dashboard/AddService/AddService";
 
 export const userInformationData = createContext();
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route exact path="/review" component={Review} />
             <Route exact path="/service-list" component={ServiceInfo} />
             <Route exact path="/add-admin" component={AddAdmin} />
+            <Route exact path="/add-service" component={AddService} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="*" component={NotFound} />
           </Switch>
