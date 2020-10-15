@@ -84,9 +84,9 @@ const ReviewForm = () => {
                       value: /[A-Z][a-z]/,
                       message: "First text should be capitalized",
                     },
-                    maxLength: {
-                      value: 30,
-                      message: " should be 30 characters",
+                    minLength: {
+                      value: 15,
+                      message: " should be 15 characters",
                     },
                   })}
                 />
