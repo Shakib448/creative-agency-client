@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import "./ClientFeedBack.css";
+import AxiosConfig from "../../AxiosConfig/AxiosConfig";
 import img1 from "../../../images/customer-1.png";
 import img2 from "../../../images/customer-2.png";
 import img3 from "../../../images/customer-3.png";
@@ -30,6 +31,20 @@ const clients = [
 ];
 
 const ClientFeedBack = () => {
+  const [clientFeedBack, setClientFeedBack] = useState([]);
+
+  useEffect(() => {
+    const handleFeedBack = async () => {
+      try {
+        const res = await AxiosConfig.get("/allReview");
+        setClientFeedBack(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    handleFeedBack();
+  }, []);
+
   return (
     <section className="clientFeedBack">
       <Container>
@@ -39,25 +54,23 @@ const ClientFeedBack = () => {
           </h1>
         </Row>
         <Row className="justify-content-center mt-4">
-          {clients.map((client, id) => (
-            <Col key={id} md={4}>
+          {clientFeedBack.map(({ _id, name, img, company, message }) => (
+            <Col key={_id} md={4}>
               <Card className="mt-4 mb-4 clientFeedBack__card">
                 <Row className="no-gutters">
                   <Card.Img
                     className="clientFeedBack__img"
                     variant="top"
-                    src={client.img}
+                    src={img}
                   />
                   <Col sm={7}>
                     <Card.Body>
-                      <Card.Title> {client.name} </Card.Title>
-                      <Card.Title> {client.jobTitle} </Card.Title>
+                      <Card.Title> {name} </Card.Title>
+                      <Card.Title> {company} </Card.Title>
                     </Card.Body>
                   </Col>
                   <Card.Body>
-                    <Card.Text className="text-secondary">
-                      {client.description}
-                    </Card.Text>
+                    <Card.Text className="text-secondary">{message}</Card.Text>
                   </Card.Body>
                 </Row>
               </Card>
