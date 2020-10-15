@@ -107,7 +107,7 @@ const AddServiceForm = () => {
                       value: /[A-Z][a-z]/,
                       message: "First text should be capitalized",
                     },
-                    minLength: {
+                    maxLength: {
                       value: 15,
                       message: " should be 15 characters",
                     },
