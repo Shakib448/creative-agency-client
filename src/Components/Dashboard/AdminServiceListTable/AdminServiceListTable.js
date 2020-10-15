@@ -49,38 +49,6 @@ const AdminServiceListTable = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            {/* <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@fat</td>
-            <td>
-              <Dropdown>
-                <Dropdown.Toggle
-                  variant={
-                    (status === "Pending" && "danger") ||
-                    (status === "Done" && "success") ||
-                    (status === "On Going" && "warning")
-                  }
-                  id="dropdown-basic"
-                >
-                  {status}
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item onClick={() => handleStatus("Done")}>
-                    Done
-                  </Dropdown.Item>
-                  <Dropdown.Item onClick={() => handleStatus("On Going")}>
-                    On Going
-                  </Dropdown.Item>
-                  <Dropdown.Item onClick={() => handleDelete()}>
-                    Delete
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </td> */}
-          </tr>
           {allCourse.map(({ _id, name, email, service, description }) => (
             <tr key={_id}>
               <td>{name}</td>

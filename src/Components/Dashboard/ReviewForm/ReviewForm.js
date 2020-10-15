@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, Form, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import "./ReviewForm.css";
+import AxiosConfig from "../../AxiosConfig/AxiosConfig";
+import { userInformationData } from "../../../App";
 
 const ReviewForm = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const [userData, setUserData] = useContext(userInformationData);
 
-  console.log(watch("example"));
+  const { register, handleSubmit, watch, errors } = useForm();
+  const onSubmit = async (data, e) => {
+    try {
+      await AxiosConfig.post("/review", {
+        review: { ...userData, ...data },
+      });
+      e.target.reset();
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <>
@@ -73,9 +84,9 @@ const ReviewForm = () => {
                       value: /[A-Z][a-z]/,
                       message: "First text should be capitalized",
                     },
-                    minLength: {
-                      value: 15,
-                      message: " should be 15 characters",
+                    maxLength: {
+                      value: 30,
+                      message: " should be 30 characters",
                     },
                   })}
                 />

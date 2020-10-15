@@ -108,8 +108,8 @@ const AddServiceForm = () => {
                       message: "First text should be capitalized",
                     },
                     maxLength: {
-                      value: 15,
-                      message: "Description should be 15 characters",
+                      value: 35,
+                      message: "Description should be 35 characters",
                     },
                   })}
                 />
