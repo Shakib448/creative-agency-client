@@ -7,6 +7,10 @@ import AxiosConfig from "../../AxiosConfig/AxiosConfig";
 const Service = () => {
   const [service, setService] = useState([]);
 
+  const [selectedService, setSelectedService] = useState([]);
+
+  console.log(selectedService);
+
   useEffect(() => {
     const handleService = async () => {
       try {
@@ -19,9 +23,9 @@ const Service = () => {
     handleService();
   }, []);
 
-  const handleService = (service) => {
-    const newService = { service };
-    setService(newService);
+  const handleService = (singleService) => {
+    const newService = { singleService };
+    setSelectedService(newService);
   };
 
   return (

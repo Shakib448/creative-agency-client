@@ -20,6 +20,7 @@ const AddServiceForm = () => {
     formData.append("description", data.description);
 
     e.target.reset();
+
     try {
       await AxiosConfig.post("/addService", formData);
     } catch (err) {
@@ -113,7 +114,7 @@ const AddServiceForm = () => {
                   })}
                 />
                 <span style={{ color: "red" }}>
-                  {errors.Description && errors.Description.message}
+                  {errors.description && errors.description.message}
                 </span>
               </Form.Group>
             </Col>

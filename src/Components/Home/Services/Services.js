@@ -4,7 +4,7 @@ import { Card, Col } from "react-bootstrap";
 const Services = ({ newService, handleService }) => {
   return (
     <>
-      <Col onClick={() => handleService(newService)} md={4}>
+      <Col onClick={() => handleService(newService)} md={4} className="mb-4">
         <Card className="d-flex align-items-center service__card">
           <div className="service__img">
             <Card.Img
