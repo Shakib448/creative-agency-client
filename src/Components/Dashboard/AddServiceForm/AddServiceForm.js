@@ -1,12 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Form, Row, Col, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import "./AddServiceForm.css";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import AxiosConfig from "../../AxiosConfig/AxiosConfig";
 
 const AddServiceForm = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const [service, setService] = useState({});
+
+  const [file, setFile] = useState(null);
+
+  console.log(service);
+  const { register, handleSubmit, watch, errors } = useForm({});
+  const onSubmit = async (data, e) => {
+    const formData = new FormData();
+    console.log(data);
+    formData.append("file", file);
+    formData.append("service", data.service);
+    formData.append("description", data.description);
+
+    e.target.reset();
+    try {
+      await AxiosConfig.post("/addService", formData);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleFileChange = (e) => {
+    const newFile = e.target.files[0];
+    setFile(newFile);
+  };
 
   console.log(watch("example"));
   return (
@@ -40,6 +64,7 @@ const AddServiceForm = () => {
                 <Form.Label>Icon</Form.Label>
                 <br />
                 <input
+                  onChange={handleFileChange}
                   type="file"
                   name="file"
                   id="file"
@@ -71,7 +96,7 @@ const AddServiceForm = () => {
                 <Form.Control
                   as="textarea"
                   rows={6}
-                  name="Description"
+                  name="description"
                   type="text"
                   placeholder="Your Description"
                   className="addServiceForm__form"

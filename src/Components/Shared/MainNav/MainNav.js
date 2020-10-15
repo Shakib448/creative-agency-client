@@ -98,8 +98,7 @@ const MainNav = () => {
                     {userData.name}
                   </Nav.Link>{" "}
                   <Button
-                    variant="outline-info"
-                    className="btn-info"
+                    className="btn btn-dark pl-5 pr-5 pt-2 pb-2 mainNav__btn"
                     onClick={() => {
                       handleBackHome();
                       setUserData({});

@@ -29,25 +29,6 @@ const AdminServiceListTable = () => {
         </thead>
         <tbody>
           <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>
-              <NavDropdown title={status} id="basic-nav-dropdown">
-                <NavDropdown.Item
-                  style={{ color: "red" }}
-                  onClick={() => handleStatus("Done")}
-                >
-                  Done
-                </NavDropdown.Item>
-                <NavDropdown.Item onClick={() => handleStatus("On Going")}>
-                  On Going
-                </NavDropdown.Item>
-              </NavDropdown>
-            </td>
-          </tr>
-          <tr>
             <td>Jacob</td>
             <td>Thornton</td>
             <td>@fat</td>
@@ -71,6 +52,9 @@ const AdminServiceListTable = () => {
                   </Dropdown.Item>
                   <Dropdown.Item onClick={() => handleStatus("On Going")}>
                     On Going
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => handleStatus()}>
+                    Delete
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
