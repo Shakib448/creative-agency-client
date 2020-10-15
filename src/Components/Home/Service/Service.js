@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import React, { useContext, useEffect, useState } from "react";
+import { Button, Container, Row } from "react-bootstrap";
 import "./Service.css";
 import Services from "../Services/Services";
 import AxiosConfig from "../../AxiosConfig/AxiosConfig";
+import { useHistory } from "react-router-dom";
+import { userInformationData } from "../../../App";
 
 const Service = () => {
+  const [userData, setUserData] = useContext(userInformationData);
+
   const [service, setService] = useState([]);
 
-  const [selectedService, setSelectedService] = useState([]);
+  const history = useHistory();
 
-  console.log(selectedService);
+  const handleServicePage = () => {
+    history.push("/service-list");
+  };
 
   useEffect(() => {
     const handleService = async () => {
@@ -23,9 +29,14 @@ const Service = () => {
     handleService();
   }, []);
 
-  const handleService = (singleService) => {
-    const newService = { singleService };
-    setSelectedService(newService);
+  const handleService = async (singleService) => {
+    try {
+      await AxiosConfig.post("/selectedCourse", {
+        data: { ...userData, ...singleService },
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -42,6 +53,7 @@ const Service = () => {
               <Services
                 newService={newService}
                 handleService={handleService}
+                handleServicePage={handleServicePage}
                 key={_id}
               />
             ))

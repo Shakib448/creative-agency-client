@@ -15,46 +15,51 @@ import AdminServiceList from "./Components/Dashboard/AdminServiceList/AdminServi
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 export const userInformationData = createContext();
+export const userInformationCourse = createContext();
+
 function App() {
   const [userData, setUserData] = useState({});
+  const [course, setCourse] = useState({});
   return (
     <div className="app">
       <userInformationData.Provider value={[userData, setUserData]}>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/google-sign-in" component={GoogleLogin} />
-            <PrivateRoute exact path="/order">
-              <Order />
-            </PrivateRoute>
+        <userInformationCourse.Provider value={[course, setCourse]}>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/google-sign-in" component={GoogleLogin} />
+              <PrivateRoute exact path="/order">
+                <Order />
+              </PrivateRoute>
 
-            <PrivateRoute exact path="/review">
-              <Review />
-            </PrivateRoute>
+              <PrivateRoute exact path="/review">
+                <Review />
+              </PrivateRoute>
 
-            <PrivateRoute exact path="/admin-service-list">
-              <AdminServiceList />
-            </PrivateRoute>
+              <PrivateRoute exact path="/admin-service-list">
+                <AdminServiceList />
+              </PrivateRoute>
 
-            <PrivateRoute exact path="/service-list">
-              <ServiceInfo />
-            </PrivateRoute>
+              <PrivateRoute exact path="/service-list">
+                <ServiceInfo />
+              </PrivateRoute>
 
-            <PrivateRoute exact path="/add-admin">
-              <AddAdmin />
-            </PrivateRoute>
+              <PrivateRoute exact path="/add-admin">
+                <AddAdmin />
+              </PrivateRoute>
 
-            <PrivateRoute exact path="/add-service">
-              <AddService />
-            </PrivateRoute>
+              <PrivateRoute exact path="/add-service">
+                <AddService />
+              </PrivateRoute>
 
-            <PrivateRoute exact path="/dashboard">
-              <Dashboard />
-            </PrivateRoute>
+              <PrivateRoute exact path="/dashboard">
+                <Dashboard />
+              </PrivateRoute>
 
-            <Route exact path="*" component={NotFound} />
-          </Switch>
-        </Router>
+              <Route exact path="*" component={NotFound} />
+            </Switch>
+          </Router>
+        </userInformationCourse.Provider>
       </userInformationData.Provider>
     </div>
   );

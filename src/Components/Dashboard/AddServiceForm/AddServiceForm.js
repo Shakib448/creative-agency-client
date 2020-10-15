@@ -109,7 +109,7 @@ const AddServiceForm = () => {
                     },
                     maxLength: {
                       value: 15,
-                      message: " should be 15 characters",
+                      message: "Description should be 15 characters",
                     },
                   })}
                 />

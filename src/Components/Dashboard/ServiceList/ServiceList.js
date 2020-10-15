@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import "./ServiceList.css";
 import img1 from "../../../images/icons/service1.png";
 import img2 from "../../../images/icons/service2.png";
 import img3 from "../../../images/icons/service3.png";
+import { userInformationData, userInformationCourse } from "../../../App";
 
 const clients = [
   {
@@ -29,6 +30,12 @@ const clients = [
   },
 ];
 const ServiceList = () => {
+  const [userData, setUserData] = useContext(userInformationData);
+
+  const [course, setCourse] = useContext(userInformationCourse);
+
+  console.log("User Data", userData);
+
   return (
     <section className="serviceList">
       <Container>
