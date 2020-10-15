@@ -5,6 +5,7 @@ import AxiosConfig from "../../AxiosConfig/AxiosConfig";
 import img1 from "../../../images/customer-1.png";
 import img2 from "../../../images/customer-2.png";
 import img3 from "../../../images/customer-3.png";
+import { Avatar } from "@material-ui/core";
 
 const clients = [
   {
@@ -58,9 +59,8 @@ const ClientFeedBack = () => {
             <Col key={_id} md={4}>
               <Card className="mt-4 mb-4 clientFeedBack__card">
                 <Row className="no-gutters">
-                  <Card.Img
-                    className="clientFeedBack__img"
-                    variant="top"
+                  <Avatar
+                    style={{ width: "100px", height: "100px" }}
                     src={img}
                   />
                   <Col sm={7}>
