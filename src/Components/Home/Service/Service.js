@@ -17,6 +17,10 @@ const Service = () => {
     history.push("/service-list");
   };
 
+  const handleGoogleLogin = () => {
+    history.push("/google-sign-in");
+  };
+
   useEffect(() => {
     const handleService = async () => {
       try {
@@ -54,6 +58,7 @@ const Service = () => {
                 newService={newService}
                 handleService={handleService}
                 handleServicePage={handleServicePage}
+                handleGoogleLogin={handleGoogleLogin}
                 key={_id}
               />
             ))
