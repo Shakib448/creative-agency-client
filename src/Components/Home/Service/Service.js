@@ -58,11 +58,19 @@ const Service = () => {
                 newService={newService}
                 handleService={handleService}
                 handleServicePage={handleServicePage}
-                handleGoogleLogin={handleGoogleLogin}
                 key={_id}
               />
             ))
             .slice(0, 6)}
+
+          {!userData.isSignIn && (
+            <Button
+              variant="outline-secondary"
+              onClick={() => handleGoogleLogin()}
+            >
+              Before Selecting You Must Log In
+            </Button>
+          )}
         </Row>
       </Container>
     </section>
