@@ -1,42 +1,19 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { userInformationData } from "../../../App";
 import "./Sidebar.css";
 import logo from "../../../images/logos/logo.png";
 import OrderForm from "../OrderForm/OrderForm";
 
-import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
-import SpeakerNotesOutlinedIcon from "@material-ui/icons/SpeakerNotesOutlined";
-import TextsmsOutlinedIcon from "@material-ui/icons/TextsmsOutlined";
-import AddIcon from "@material-ui/icons/Add";
-import GroupAddIcon from "@material-ui/icons/GroupAdd";
 import ServiceList from "../ServiceList/ServiceList";
 import ReviewForm from "../ReviewForm/ReviewForm";
 import AddAdminForm from "../AddAdminForm/AddAdminForm";
 import AddServiceForm from "../AddServiceForm/AddServiceForm";
-import { Avatar } from "@material-ui/core";
 import AdminServiceListTable from "../AdminServiceListTable/AdminServiceListTable";
-import AxiosConfig from "../../AxiosConfig/AxiosConfig";
+import SidebarHeading from "../SidebarHeading/SidebarHeading";
+import CollapseBar from "../CollapseBar/CollapseBar";
 
 const Sidebar = ({ heading }) => {
-  const [userData, setUserData] = useContext(userInformationData);
   const location = useLocation();
-  const [isAdmin, setAdmin] = useState(false);
-
-  useEffect(() => {
-    const handleAdmin = async (e) => {
-      try {
-        const res = await AxiosConfig.post("/isAdmin", {
-          email: userData.email,
-        });
-        e.target.reset();
-        setAdmin(res.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    handleAdmin();
-  }, []);
 
   return (
     <div className="d-flex mb-5" id="wrapper">
@@ -56,54 +33,7 @@ const Sidebar = ({ heading }) => {
           </NavLink>
         </div>
         <div className="list-group list-group-flush ">
-          <NavLink
-            style={{ fontFamily: "Piazzolla, serif" }}
-            to="/order"
-            activeClassName="sidebar__active"
-            className="list-group-item list-group-item-action  "
-          >
-            <ShoppingCartOutlinedIcon /> Order
-          </NavLink>
-          <NavLink
-            style={{ fontFamily: "Piazzolla, serif" }}
-            to="/service-list"
-            activeClassName="sidebar__active"
-            className="list-group-item list-group-item-action "
-          >
-            <SpeakerNotesOutlinedIcon /> Service list
-          </NavLink>
-          <NavLink
-            style={{ fontFamily: "Piazzolla, serif" }}
-            to="/admin-service-list"
-            activeClassName="sidebar__active"
-            className="list-group-item list-group-item-action "
-          >
-            <SpeakerNotesOutlinedIcon /> Admin Service list
-          </NavLink>
-          <NavLink
-            style={{ fontFamily: "Piazzolla, serif" }}
-            to="/review"
-            activeClassName="sidebar__active"
-            className="list-group-item list-group-item-action "
-          >
-            <TextsmsOutlinedIcon /> Review
-          </NavLink>
-          <NavLink
-            style={{ fontFamily: "Piazzolla, serif" }}
-            to="/add-service"
-            activeClassName="sidebar__active"
-            className="list-group-item list-group-item-action "
-          >
-            <AddIcon /> Add Service
-          </NavLink>
-          <NavLink
-            style={{ fontFamily: "Piazzolla, serif" }}
-            to="/add-admin"
-            activeClassName="sidebar__active"
-            className="list-group-item list-group-item-action "
-          >
-            <GroupAddIcon /> Make Admin
-          </NavLink>
+          <SidebarHeading />
         </div>
       </div>
 
@@ -141,75 +71,7 @@ const Sidebar = ({ heading }) => {
             className="collapse navbar-collapse "
             id="navbarSupportedContent"
           >
-            <ul className="navbar-nav ml-auto mt-2 mt-lg-0 d-sm-block d-md-block d-lg-none ">
-              <li className="nav-item active">
-                <NavLink
-                  style={{ fontFamily: "Piazzolla, serif" }}
-                  to="/order"
-                  activeClassName="sidebar__active"
-                  className="list-group-item list-group-item-action  "
-                >
-                  <ShoppingCartOutlinedIcon /> Order
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  style={{ fontFamily: "Piazzolla, serif" }}
-                  to="/service-list"
-                  activeClassName="sidebar__active"
-                  className="list-group-item list-group-item-action "
-                >
-                  <SpeakerNotesOutlinedIcon /> Service list
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  style={{ fontFamily: "Piazzolla, serif" }}
-                  to="/admin-service-list"
-                  activeClassName="sidebar__active"
-                  className="list-group-item list-group-item-action "
-                >
-                  <SpeakerNotesOutlinedIcon /> Admin Service list
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink
-                  style={{ fontFamily: "Piazzolla, serif" }}
-                  to="/review"
-                  activeClassName="sidebar__active"
-                  className="list-group-item list-group-item-action "
-                >
-                  <TextsmsOutlinedIcon /> Review
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  style={{ fontFamily: "Piazzolla, serif" }}
-                  to="/add-service"
-                  activeClassName="sidebar__active"
-                  className="list-group-item list-group-item-action "
-                >
-                  <AddIcon /> Add Service
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  style={{ fontFamily: "Piazzolla, serif" }}
-                  to="/add-admin"
-                  activeClassName="sidebar__active"
-                  className="list-group-item list-group-item-action "
-                >
-                  <GroupAddIcon /> Make Admin
-                </NavLink>
-              </li>
-            </ul>
-            <div className="ml-auto  d-none d-md-none d-lg-block ">
-              <Avatar src={userData.img} />
-            </div>
-            <div style={{ margin: "0 20px" }}>
-              <b>{userData.name}</b>
-            </div>
+            <CollapseBar />
           </div>
         </nav>
         <div className="container-fluid">
