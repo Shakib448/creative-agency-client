@@ -2,25 +2,12 @@ import React, { useContext } from "react";
 import { Card, Col, Button } from "react-bootstrap";
 import { userInformationData } from "../../../App";
 
-const Services = ({
-  newService,
-  handleService,
-  handleServicePage,
-  handleGoogleLogin,
-}) => {
+const Services = ({ newService, handleService, handleServicePage }) => {
   const [userData, setUserData] = useContext(userInformationData);
   return (
     <>
       {userData.isSignIn && (
         <Col
-          // onClick={() =>
-          //   (!userData.isSignIn && handleGoogleLogin()) ||
-          //   (userData.isSignIn &&
-          //     handleService(newService) &&
-          //     userData.isSignIn &&
-          //     handleServicePage())
-          // }
-
           onClick={() => {
             handleService(newService);
             handleServicePage();

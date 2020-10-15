@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { userInformationData } from "../../../App";
 import "./Sidebar.css";
@@ -16,10 +16,27 @@ import AddAdminForm from "../AddAdminForm/AddAdminForm";
 import AddServiceForm from "../AddServiceForm/AddServiceForm";
 import { Avatar } from "@material-ui/core";
 import AdminServiceListTable from "../AdminServiceListTable/AdminServiceListTable";
+import AxiosConfig from "../../AxiosConfig/AxiosConfig";
 
 const Sidebar = ({ heading }) => {
   const [userData, setUserData] = useContext(userInformationData);
   const location = useLocation();
+  const [isAdmin, setAdmin] = useState(false);
+
+  useEffect(() => {
+    const handleAdmin = async (e) => {
+      try {
+        const res = await AxiosConfig.post("/isAdmin", {
+          email: userData.email,
+        });
+        e.target.reset();
+        setAdmin(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    handleAdmin();
+  }, []);
 
   return (
     <div className="d-flex mb-5" id="wrapper">

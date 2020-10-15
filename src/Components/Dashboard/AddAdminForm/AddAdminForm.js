@@ -1,13 +1,21 @@
 import React from "react";
 import { Col, Form, Button, Row, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import AxiosConfig from "../../AxiosConfig/AxiosConfig";
 import "./AddAdminForm.css";
 
 const AddAdminForm = () => {
   const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = (data) => console.log(data);
-
-  console.log(watch("example"));
+  const onSubmit = async (data, e) => {
+    try {
+      await AxiosConfig.post("/addAdmin", {
+        data: data.email,
+      });
+      e.target.reset();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
