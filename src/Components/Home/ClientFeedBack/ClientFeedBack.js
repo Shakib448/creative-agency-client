@@ -65,8 +65,26 @@ const ClientFeedBack = () => {
                   />
                   <Col sm={7}>
                     <Card.Body>
-                      <Card.Title> {name} </Card.Title>
-                      <Card.Title> {company} </Card.Title>
+                      <Card.Title
+                        style={{
+                          whiteSpace: "nowrap",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                        }}
+                      >
+                        {" "}
+                        {name}{" "}
+                      </Card.Title>
+                      <Card.Title
+                        style={{
+                          whiteSpace: "nowrap",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                        }}
+                      >
+                        {" "}
+                        {company}{" "}
+                      </Card.Title>
                     </Card.Body>
                   </Col>
                   <Card.Body>

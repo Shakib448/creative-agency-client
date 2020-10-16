@@ -98,7 +98,8 @@ const Service = () => {
               Before Selecting You Must Log In
             </Button>
           )}
-
+        </Row>
+        <Row className="justify-content-center mt-4">
           {isAdmin && (
             <Button variant="primary" onClick={() => handleAdmin()}>
               Welcome Admin {userData.name}
