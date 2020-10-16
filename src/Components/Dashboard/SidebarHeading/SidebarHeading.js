@@ -12,16 +12,14 @@ import GroupAddIcon from "@material-ui/icons/GroupAdd";
 const SidebarHeading = () => {
   const [userData, setUserData] = useContext(userInformationData);
   const [isAdmin, setAdmin] = useState(false);
-  console.log("isAdmin", isAdmin);
 
   useEffect(() => {
-    const handleAdmin = async (e) => {
+    const handleAdmin = async () => {
       try {
         const res = await AxiosConfig.post("/isAdmin", {
           data: userData.email,
         });
         setAdmin(res.data);
-        e.target.reset();
       } catch (error) {
         console.log(error);
       }
@@ -31,7 +29,7 @@ const SidebarHeading = () => {
 
   return (
     <>
-      {isAdmin && (
+      {isAdmin ? (
         <>
           <NavLink
             style={{ fontFamily: "Piazzolla, serif" }}
@@ -39,7 +37,7 @@ const SidebarHeading = () => {
             activeClassName="sidebar__active"
             className="list-group-item list-group-item-action "
           >
-            <SpeakerNotesOutlinedIcon /> Admin Service list
+            <SpeakerNotesOutlinedIcon /> Service list
           </NavLink>
           <NavLink
             style={{ fontFamily: "Piazzolla, serif" }}
@@ -58,33 +56,35 @@ const SidebarHeading = () => {
             <GroupAddIcon /> Make Admin
           </NavLink>
         </>
+      ) : (
+        <>
+          <NavLink
+            style={{ fontFamily: "Piazzolla, serif" }}
+            to="/order"
+            activeClassName="sidebar__active"
+            className="list-group-item list-group-item-action  "
+          >
+            <ShoppingCartOutlinedIcon /> Order
+          </NavLink>
+
+          <NavLink
+            style={{ fontFamily: "Piazzolla, serif" }}
+            to="/service-list"
+            activeClassName="sidebar__active"
+            className="list-group-item list-group-item-action "
+          >
+            <SpeakerNotesOutlinedIcon /> Service list
+          </NavLink>
+          <NavLink
+            style={{ fontFamily: "Piazzolla, serif" }}
+            to="/review"
+            activeClassName="sidebar__active"
+            className="list-group-item list-group-item-action "
+          >
+            <TextsmsOutlinedIcon /> Review
+          </NavLink>
+        </>
       )}
-
-      <NavLink
-        style={{ fontFamily: "Piazzolla, serif" }}
-        to="/order"
-        activeClassName="sidebar__active"
-        className="list-group-item list-group-item-action  "
-      >
-        <ShoppingCartOutlinedIcon /> Order
-      </NavLink>
-
-      <NavLink
-        style={{ fontFamily: "Piazzolla, serif" }}
-        to="/service-list"
-        activeClassName="sidebar__active"
-        className="list-group-item list-group-item-action "
-      >
-        <SpeakerNotesOutlinedIcon /> Service list
-      </NavLink>
-      <NavLink
-        style={{ fontFamily: "Piazzolla, serif" }}
-        to="/review"
-        activeClassName="sidebar__active"
-        className="list-group-item list-group-item-action "
-      >
-        <TextsmsOutlinedIcon /> Review
-      </NavLink>
     </>
   );
 };
