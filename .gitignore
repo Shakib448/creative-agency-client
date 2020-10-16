@@ -25,3 +25,6 @@ yarn-error.log*
 
 #Firebase
 /src/Components/GoogleLogin/Firebase.config.js
+/.firebase
+/.firebaserc
+/firebase.json
