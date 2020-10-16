@@ -4,7 +4,7 @@ import Sidebar from "../Sidebar/Sidebar";
 const AdminServiceList = () => {
   return (
     <>
-      <Sidebar heading="Admin Service List" />
+      <Sidebar heading=" Service List" />
     </>
   );
 };

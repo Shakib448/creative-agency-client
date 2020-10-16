@@ -41,7 +41,7 @@ const CollapseBar = () => {
                 activeClassName="sidebar__active"
                 className="list-group-item list-group-item-action "
               >
-                <SpeakerNotesOutlinedIcon /> Admin Service list
+                <SpeakerNotesOutlinedIcon /> Service list
               </NavLink>
             </li>
             <li className="nav-item">

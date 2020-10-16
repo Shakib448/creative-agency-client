@@ -10,11 +10,9 @@ const AddServiceForm = () => {
 
   const [file, setFile] = useState(null);
 
-  console.log(service);
   const { register, handleSubmit, watch, errors } = useForm({});
   const onSubmit = async (data, e) => {
     const formData = new FormData();
-    console.log(data);
     formData.append("file", file);
     formData.append("service", data.service);
     formData.append("description", data.description);
@@ -33,7 +31,6 @@ const AddServiceForm = () => {
     setFile(newFile);
   };
 
-  console.log(watch("example"));
   return (
     <>
       <Container className="addServiceForm">

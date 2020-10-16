@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./OrderForm.css";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
 const OrderForm = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const [orderForm, setOrderForm] = useState({});
+  const { register, handleSubmit, watch, errors } = useForm({});
 
-  console.log(watch("example"));
+  const [file, setFile] = useState(null);
+
+  const onSubmit = (data) => {};
 
   return (
     <>

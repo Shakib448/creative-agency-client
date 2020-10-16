@@ -4,11 +4,12 @@ import "./Service.css";
 import Services from "../Services/Services";
 import AxiosConfig from "../../AxiosConfig/AxiosConfig";
 import { useHistory } from "react-router-dom";
-import { userInformationData } from "../../../App";
+import { userInformationData, userInformationCourse } from "../../../App";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 const Service = () => {
   const [userData, setUserData] = useContext(userInformationData);
+  const [course, setCourse] = useContext(userInformationCourse);
   const [loading, setLoading] = useState(false);
 
   const [service, setService] = useState([]);
@@ -24,7 +25,6 @@ const Service = () => {
           data: userData.email,
         });
         setAdmin(res.data);
-        e.target.reset();
       } catch (error) {
         console.log(error);
       }
@@ -61,6 +61,7 @@ const Service = () => {
       await AxiosConfig.post("/selectedCourse", {
         data: { ...userData, ...singleService },
       });
+      setCourse(singleService);
       setLoading(false);
     } catch (err) {
       console.log(err);
