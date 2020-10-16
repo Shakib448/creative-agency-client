@@ -1,19 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import "./ServiceList.css";
-
 import AxiosConfig from "../../AxiosConfig/AxiosConfig";
 import { userInformationData } from "../../../App";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const ServiceList = () => {
   const [courseList, setCourseList] = useState([]);
   const [userData, setUserData] = useContext(userInformationData);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const courseDataList = async () => {
       try {
         const res = await AxiosConfig.get("/course?email=" + userData.email);
         setCourseList(res.data);
+        setLoading(false);
       } catch (err) {
         console.log(err);
       }
@@ -24,6 +26,9 @@ const ServiceList = () => {
   return (
     <section className="serviceList">
       <Container>
+        <Row className="justify-content-center ">
+          {courseList.length === 0 && <CircularProgress color="secondary" />}
+        </Row>
         <Row>
           {courseList.map((client, id) => (
             <Col key={id} md={4}>
