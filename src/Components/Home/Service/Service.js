@@ -5,9 +5,11 @@ import Services from "../Services/Services";
 import AxiosConfig from "../../AxiosConfig/AxiosConfig";
 import { useHistory } from "react-router-dom";
 import { userInformationData } from "../../../App";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const Service = () => {
   const [userData, setUserData] = useContext(userInformationData);
+  const [loading, setLoading] = useState(false);
 
   const [service, setService] = useState([]);
 
@@ -38,6 +40,7 @@ const Service = () => {
       await AxiosConfig.post("/selectedCourse", {
         data: { ...userData, ...singleService },
       });
+      setLoading(false);
     } catch (err) {
       console.log(err);
     }
@@ -52,12 +55,14 @@ const Service = () => {
           </h1>
         </Row>
         <Row className="justify-content-center mt-4 ">
+          {service.length === 0 && <CircularProgress color="secondary" />}
           {service
             .map((newService, _id) => (
               <Services
                 newService={newService}
                 handleService={handleService}
                 handleServicePage={handleServicePage}
+                loading={loading}
                 key={_id}
               />
             ))

@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import { Card, Col, Button } from "react-bootstrap";
+import { Card, Col } from "react-bootstrap";
 import { userInformationData } from "../../../App";
 
 const Services = ({ newService, handleService, handleServicePage }) => {
   const [userData, setUserData] = useContext(userInformationData);
+
   return (
     <>
       {userData.isSignIn && (
