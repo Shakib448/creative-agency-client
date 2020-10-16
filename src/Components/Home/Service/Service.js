@@ -15,6 +15,27 @@ const Service = () => {
 
   const history = useHistory();
 
+  const [isAdmin, setAdmin] = useState(false);
+
+  useEffect(() => {
+    const handleAdmin = async (e) => {
+      try {
+        const res = await AxiosConfig.post("/isAdmin", {
+          data: userData.email,
+        });
+        setAdmin(res.data);
+        e.target.reset();
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    handleAdmin();
+  }, []);
+
+  const handleAdmin = () => {
+    history.push("/admin-service-list");
+  };
+
   const handleOrderPage = () => {
     history.push("/order");
   };
@@ -74,6 +95,12 @@ const Service = () => {
               onClick={() => handleGoogleLogin()}
             >
               Before Selecting You Must Log In
+            </Button>
+          )}
+
+          {isAdmin && (
+            <Button variant="primary" onClick={() => handleAdmin()}>
+              Welcome Admin {userData.name}
             </Button>
           )}
         </Row>

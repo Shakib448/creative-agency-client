@@ -44,7 +44,6 @@ const AdminServiceListTable = () => {
     try {
       await AxiosConfig.delete(`/delete/${_id}`).then((res) => {
         if (res) {
-          alert("The Backhand server is running successfully 🚀  ");
           handleDeleteDataCall();
         }
       });
