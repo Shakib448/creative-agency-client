@@ -15,8 +15,8 @@ const Service = () => {
 
   const history = useHistory();
 
-  const handleServicePage = () => {
-    history.push("/service-list");
+  const handleOrderPage = () => {
+    history.push("/order");
   };
 
   const handleGoogleLogin = () => {
@@ -61,7 +61,7 @@ const Service = () => {
               <Services
                 newService={newService}
                 handleService={handleService}
-                handleServicePage={handleServicePage}
+                handleOrderPage={handleOrderPage}
                 loading={loading}
                 key={_id}
               />

@@ -9,8 +9,6 @@ const AdminServiceListTable = () => {
   const [loading, setLoading] = useState(true);
   const [allCourse, setAllCourse] = useState([]);
 
-  console.log(allCourse);
-
   useEffect(() => {
     const handleAllCourse = async () => {
       try {
@@ -24,12 +22,35 @@ const AdminServiceListTable = () => {
     handleAllCourse();
   }, []);
 
+  const handleDeleteDataCall = async () => {
+    try {
+      const res = await AxiosConfig.get("/allCourse");
+      setAllCourse(res.data);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    handleDeleteDataCall();
+  }, []);
+
   const handleStatus = (newStatus) => {
     setStatus(newStatus);
   };
 
-  const handleDelete = () => {
-    console.log("delete");
+  const handleDelete = async (_id) => {
+    try {
+      await AxiosConfig.delete(`/delete/${_id}`).then((res) => {
+        if (res) {
+          alert("The Backhand server is running successfully 🚀  ");
+          handleDeleteDataCall();
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -76,7 +97,7 @@ const AdminServiceListTable = () => {
                         <Dropdown.Item onClick={() => handleStatus("On Going")}>
                           On Going
                         </Dropdown.Item>
-                        <Dropdown.Item onClick={() => handleDelete()}>
+                        <Dropdown.Item onClick={() => handleDelete(_id)}>
                           Delete
                         </Dropdown.Item>
                       </Dropdown.Menu>

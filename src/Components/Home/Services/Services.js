@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Card, Col } from "react-bootstrap";
 import { userInformationData } from "../../../App";
 
-const Services = ({ newService, handleService, handleServicePage }) => {
+const Services = ({ newService, handleService, handleOrderPage }) => {
   const [userData, setUserData] = useContext(userInformationData);
 
   return (
@@ -11,7 +11,7 @@ const Services = ({ newService, handleService, handleServicePage }) => {
         <Col
           onClick={() => {
             handleService(newService);
-            handleServicePage();
+            handleOrderPage();
           }}
           md={4}
           className="mb-4"
