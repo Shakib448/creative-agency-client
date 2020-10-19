@@ -20,9 +20,13 @@ export const userInformationCourse = createContext();
 function App() {
   const [userData, setUserData] = useState({});
   const [course, setCourse] = useState({});
+  const [isAdmin, setAdmin] = useState(false);
+
   return (
     <div className="app">
-      <userInformationData.Provider value={[userData, setUserData]}>
+      <userInformationData.Provider
+        value={[userData, setUserData, isAdmin, setAdmin]}
+      >
         <userInformationCourse.Provider value={[course, setCourse]}>
           <Router>
             <Switch>

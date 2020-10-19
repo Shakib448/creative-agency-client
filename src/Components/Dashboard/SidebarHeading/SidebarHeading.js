@@ -10,8 +10,9 @@ import AddIcon from "@material-ui/icons/Add";
 import GroupAddIcon from "@material-ui/icons/GroupAdd";
 
 const SidebarHeading = () => {
-  const [userData, setUserData] = useContext(userInformationData);
-  const [isAdmin, setAdmin] = useState(false);
+  const [userData, setUserData, isAdmin, setAdmin] = useContext(
+    userInformationData
+  );
 
   console.log(isAdmin);
 
@@ -20,14 +21,8 @@ const SidebarHeading = () => {
       try {
         const res = await AxiosConfig.post("/isAdmin", {
           data: userData.email,
-        }).then((res) => {
-          if (res.data) {
-            alert(
-              "I stuck the bug around 8+ but I didn't find any kind of solution. I wait meet session around 1 hour and also post in group but no response found. I know the mentor are too busy to handle our problems. So my badly request I need this solution. Thanks"
-            );
-            setAdmin(res.data);
-          }
         });
+        setAdmin(res.data);
       } catch (error) {
         console.log(error);
       }
